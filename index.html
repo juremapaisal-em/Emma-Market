@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emma Market</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #f3e8ef; /* lila claro */
+      color: #333;
+    }
+    header {
+      background: #b453a6; /* lila fuerte */
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    nav {
+      background: #9333a3;
+      padding: 0.7rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .producto {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .producto img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .producto h3 {
+      margin: 0.7rem 0 0.3rem;
+    }
+    .producto p {
+      margin: 0;
+      font-weight: bold;
+      color: #9333a3;
+    }
+    .whatsapp {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #25D366;
+      color: white;
+      padding: 0.9rem 1.6rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: bold;
+    }
+    .whatsapp:hover {
+      background: #1ebe5d;
+    }
+    footer {
+      background: #4b1140;
+      color: #f5d0fe;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Emma Market</h1>
+    <p>Productos básicos, limpieza y almacén</p>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#contacto">Pedidos</a>
+  </nav>
+
+  <main>
+    <section id="inicio">
+      <h2>Bienvenidos</h2>
+      <p>En <strong>Emma Market</strong> encontrás productos básicos, enlatados, artículos de limpieza e higiene personal. Hacé tu pedido fácil por WhatsApp.</p>
+      <a class="whatsapp" href="https://wa.me/59895563602?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank">📲 Hacer pedido por WhatsApp</a>
+    </section>
+
+    <section id="productos">
+      <h2>Nuestros productos</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="https://via.placeholder.com/200x120" alt="Enlatados" />
+          <h3>Enlatados</h3>
+          <p>Arvejas, choclo, atún</p>
+        </div>
+        <div class="producto">
+          <img src="https://via.placeholder.com/200x120" alt="Limpieza" />
+          <h3>Limpieza</h3>
+          <p>Detergente, lavandina</p>
+        </div>
+        <div class="producto">
+          <img src="https://via.placeholder.com/200x120" alt="Higiene" />
+          <h3>Higiene personal</h3>
+          <p>Jabón, shampoo</p>
+        </div>
+        <div class="producto">
+          <img src="https://via.placeholder.com/200x120" alt="Almacén" />
+          <h3>Almacén</h3>
+          <p>Galletitas, arroz, fideos</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Pedidos y contacto</h2>
+      <p>📍 Dirección: 3230 Sendic 71 C</p>
+      <p>🕒 Horario: Consultar por WhatsApp</p>
+      <p>📞 WhatsApp: 095 563 602</p>
+      <a class="whatsapp" href="https://wa.me/59895563602?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank">💬 Pedir ahora</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 - Emma Market</p>
+  </footer>
+</body>
+</html>
