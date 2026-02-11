@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Emma Market</title>
+
+<style>
+body{font-family:Arial;margin:0;background:#f4f4f6;}
+
+/* HEADER */
+header{
+ background:#6c3eb8;
+ color:white;
+ padding:18px;
+ text-align:center;
+ font-size:22px;
+ position:relative;
+}
+
+/* 🔥 CARTEL ABIERTO */
+#abierto{
+ position:absolute;
+ right:15px;
+ top:15px;
+ background:#00c853;
+ padding:6px 12px;
+ border-radius:8px;
+ font-weight:bold;
+}
+
+/* 🏪 SLIDER */
+#slider{
+ position:relative;
+ width:100%;
+ height:260px;
+ overflow:hidden;
+ background:#fff;
+}
+
+.slide{
+ position:absolute;
+ width:100%;
+ height:100%;
+ opacity:0;
+ transition:opacity 1s ease;
+}
+
+.slide img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+}
+
+.slide.activo{opacity:1;}
+
+/* 💜 DESCRIPCION */
+#descripcion{
+ background:white;
+ margin:20px;
+ padding:25px;
+ border-radius:14px;
+ line-height:1.7;
+ box-shadow:0 3px 10px rgba(0,0,0,0.08);
+ text-align:center;
+}
+
+/* 🛒 CATALOGO */
+#catalogo{
+ display:grid;
+ grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+ gap:25px;
+ padding:20px;
+}
+
+.card{
+ background:white;
+ border-radius:14px;
+ padding:15px;
+ text-align:center;
+ box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.card img{
+ width:100%;
+ height:170px;
+ object-fit:cover;
+ border-radius:10px;
+}
+
+.precio{
+ color:#6c3eb8;
+ font-weight:bold;
+ font-size:20px;
+}
+
+/* 🎟️ RIFA */
+#rifaFinal{
+ background:#fff;
+ margin:20px;
+ padding:20px;
+ border-radius:14px;
+ text-align:center;
+ box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+#rifaFinal img{
+ width:100%;
+ max-width:500px;
+ border-radius:12px;
+}
+
+/* 📍 FOOTER */
+footer{
+ background:#6c3eb8;
+ color:white;
+ text-align:center;
+ padding:18px;
+ margin-top:20px;
+ font-size:18px;
+}
+
+/* 🟢 BOTON WHATSAPP */
+#whatsapp{
+ position:fixed;
+ bottom:20px;
+ right:20px;
+ background:#25D366;
+ color:white;
+ padding:15px 18px;
+ border-radius:50%;
+ font-size:24px;
+ text-decoration:none;
+ box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+Emma Market 💜
+<div id="abierto">ABIERTO</div>
+</header>
+
+<!-- 🏪 SLIDER -->
+<div id="slider">
+<div class="slide activo"><img src="img/frente.jpg"></div>
+<div class="slide"><img src="img/interior.jpg"></div>
+</div>
+
+<!-- 💜 DESCRIPCION PROFESIONAL -->
+<div id="descripcion">
+<p>
+Emma Market nació de una historia real, de esas que se construyen día a día. Soy mamá, emprendedora y vecina del barrio, y decidí crear este almacén pensando en algo simple pero importante: que tengas productos de todos los días, buenos precios y una atención cercana, de confianza.
+<br><br>
+En Emma Market encontrás alimentos básicos, bebidas, productos de limpieza, artículos para mascotas y todo lo que necesitás para tu casa, sin tener que irte lejos ni gastar de más.
+<br><br>
+Acá no sos un número. Conozco a mis clientes, escucho lo que necesitan y voy sumando productos según el barrio lo pide.
+<br><br>
+Emma Market es un almacén hecho con esfuerzo, dedicación y mucho corazón. Te espero 💜
+</p>
+</div>
+
+<!-- 🛒 CATALOGO -->
+<div id="catalogo"></div>
+
+<!-- 🎟️ RIFA -->
+<div id="rifaFinal">
+<h2>🎟️ Super Rifa Emma Market</h2>
+<img src="img/rifa.jpg">
+<p class="precio">$100 el número</p>
+</div>
+
+<!-- 📍 DIRECCION -->
+<footer>
+📍 Larravide 3230 — Emma Market 💜
+</footer>
+
+<!-- 🟢 BOTON WHATSAPP -->
+<a id="whatsapp" href="https://wa.me/59895563602" target="_blank">💬</a>
+
+<script>
+
+/* PRODUCTOS */
+const productos=[
+{nombre:"Aceite Condesa",precio:80,imagen:"img/aceite.jpg"},
+{nombre:"Azúcar",precio:75,imagen:"img/azucar.jpg"},
+{nombre:"Arroz Saman",precio:75,imagen:"img/arroz.jpg"}
+];
+
+const catalogo=document.getElementById("catalogo");
+
+function render(){
+ catalogo.innerHTML="";
+ productos.forEach(p=>{
+  const card=document.createElement("div");
+  card.className="card";
+  card.innerHTML=`
+  <img src="${p.imagen}" onerror="this.src='img/frente.jpg'">
+  <h3>${p.nombre}</h3>
+  <p class="precio">$${p.precio}</p>
+  `;
+  catalogo.appendChild(card);
+ });
+}
+
+render();
+
+/* 🏪 SLIDER AUTOMATICO */
+let slides=document.querySelectorAll(".slide");
+let index=0;
+
+setInterval(()=>{
+ slides[index].classList.remove("activo");
+ index=(index+1)%slides.length;
+ slides[index].classList.add("activo");
+},3000);
+
+</script>
+
+</body>
+</html>
