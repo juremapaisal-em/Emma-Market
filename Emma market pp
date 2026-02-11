@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#6c3eb8">
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -217,6 +219,9 @@ setInterval(()=>{
 },3000);
 
 </script>
+if("serviceWorker" in navigator){
+ navigator.serviceWorker.register("sw.js");
+}
 
 </body>
 </html>
