@@ -41,4 +41,124 @@ header{
   width:90%;
   max-width:600px;
   border-radius:15px;
-  box-shadow:0 6px 15px rgba(0,0,0,0.2)
+  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+.productos{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
+}
+
+.card{
+  background:white;
+  width:200px;
+  padding:15px;
+  border-radius:15px;
+  box-shadow:0 6px 12px rgba(0,0,0,0.15);
+  text-align:center;
+}
+
+.card h4{
+  margin:10px 0 5px;
+}
+
+.precio{
+  font-weight:bold;
+  color:#8e24aa;
+}
+
+button{
+  background:#ec407a;
+  color:white;
+  border:none;
+  padding:8px;
+  width:100%;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.categoria{
+  width:100%;
+  text-align:left;
+  margin:30px 0 10px 40px;
+  font-size:22px;
+  color:#8e24aa;
+  font-weight:600;
+}
+
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:white;
+  font-size:28px;
+  padding:15px;
+  border-radius:50%;
+  text-decoration:none;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Emma Market</h1>
+<p>Pedidos por WhatsApp - 095563602</p>
+</header>
+
+<section class="hero">
+<img src="emma almacen.webp">
+</section>
+
+<section class="section local">
+<h2>Nuestro Local</h2>
+<img src="almacen por dentro.jpg">
+</section>
+
+<section class="section rifa">
+<h2>🎟 Súper Rifa</h2>
+<img src="rifa.jpg">
+<p><strong>Costo del boleto: $100</strong></p>
+<p>Midinero: 3701668133<br>
+Titular: Jurema Noemi Paisal</p>
+</section>
+
+<section class="section">
+<h2>Catálogo</h2>
+<div class="productos">
+
+<div class="categoria">Aceites</div>
+
+<div class="card"><h4>Aceite Condesa</h4><div class="precio">$80</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Aceite%20Condesa')">Comprar</button></div>
+<div class="card"><h4>Aceite Uruguay Girasol</h4><div class="precio">$110</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Aceite%20Uruguay')">Comprar</button></div>
+<div class="card"><h4>Aceite Cañuelas</h4><div class="precio">$120</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Aceite%20Cañuelas')">Comprar</button></div>
+
+<div class="categoria">Almacén</div>
+
+<div class="card"><h4>Azúcar</h4><div class="precio">$75</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Azucar')">Comprar</button></div>
+<div class="card"><h4>Arroz Saman</h4><div class="precio">$75</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Arroz%20Saman')">Comprar</button></div>
+<div class="card"><h4>Arroz Blue Patna</h4><div class="precio">$80</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Arroz%20Blue')">Comprar</button></div>
+<div class="card"><h4>Arroz Chef</h4><div class="precio">$80</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Arroz%20Chef')">Comprar</button></div>
+<div class="card"><h4>Harina</h4><div class="precio">$60</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Harina')">Comprar</button></div>
+<div class="card"><h4>Fideos</h4><div class="precio">$65</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Fideos')">Comprar</button></div>
+<div class="card"><h4>Porotos</h4><div class="precio">$65</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Porotos')">Comprar</button></div>
+<div class="card"><h4>Sal</h4><div class="precio">$65</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Sal')">Comprar</button></div>
+
+<div class="categoria">Bebidas</div>
+
+<div class="card"><h4>Coca-Cola 2L</h4><div class="precio">$180</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Coca%202L')">Comprar</button></div>
+<div class="card"><h4>Coca-Cola 600ml</h4><div class="precio">$70</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Coca%20600ml')">Comprar</button></div>
+<div class="card"><h4>Monster</h4><div class="precio">$120</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Monster')">Comprar</button></div>
+<div class="card"><h4>Vino Faisan</h4><div class="precio">$130</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Vino%20Faisan')">Comprar</button></div>
+
+</div>
+</section>
+
+<a href="https://wa.me/59895563602" class="whatsapp">💬</a>
+
+</body>
+</html>
