@@ -1,104 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#6c3eb8">  
 <head>
 <meta charset="UTF-8">
 <title>Emma Market</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body{
-  font-family:'Poppins',sans-serif;
-  margin:0;
-  background:linear-gradient(135deg,#f8bbd0,#e1bee7);
-  color:#333;
-}
+body{font-family:Arial;margin:0;background:#f4f4f6;}
 
+/* HEADER */
 header{
-  background:#8e24aa;
-  color:white;
-  text-align:center;
-  padding:25px;
+ background:#6c3eb8;
+ color:white;
+ padding:18px;
+ text-align:center;
+ font-size:22px;
+ position:relative;
 }
 
-.hero img{
-  width:100%;
-  max-height:500px;
-  object-fit:cover;
+/* 🔥 CARTEL ABIERTO */
+#abierto{
+ position:absolute;
+ right:15px;
+ top:15px;
+ background:#00c853;
+ padding:6px 12px;
+ border-radius:8px;
+ font-weight:bold;
 }
 
-.section{
-  padding:40px 20px;
-  text-align:center;
+/* 🏪 SLIDER */
+#slider{
+ position:relative;
+ width:100%;
+ height:260px;
+ overflow:hidden;
+ background:#fff;
 }
 
-.local img{
-  width:90%;
-  border-radius:15px;
-  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+.slide{
+ position:absolute;
+ width:100%;
+ height:100%;
+ opacity:0;
+ transition:opacity 1s ease;
 }
 
-.rifa img{
-  width:90%;
-  max-width:600px;
-  border-radius:15px;
-  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+.slide img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
 }
 
-.productos{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  justify-content:center;
+.slide.activo{opacity:1;}
+
+/* 💜 DESCRIPCION */
+#descripcion{
+ background:white;
+ margin:20px;
+ padding:25px;
+ border-radius:14px;
+ line-height:1.7;
+ box-shadow:0 3px 10px rgba(0,0,0,0.08);
+ text-align:center;
+}
+
+/* 🛒 CATALOGO */
+#catalogo{
+ display:grid;
+ grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+ gap:25px;
+ padding:20px;
 }
 
 .card{
-  background:white;
-  width:200px;
-  padding:15px;
-  border-radius:15px;
-  box-shadow:0 6px 12px rgba(0,0,0,0.15);
-  text-align:center;
+ background:white;
+ border-radius:14px;
+ padding:15px;
+ text-align:center;
+ box-shadow:0 3px 10px rgba(0,0,0,0.08);
 }
 
-.card h4{
-  margin:10px 0 5px;
+.card img{
+ width:100%;
+ height:170px;
+ object-fit:cover;
+ border-radius:10px;
 }
 
 .precio{
-  font-weight:bold;
-  color:#8e24aa;
+ color:#6c3eb8;
+ font-weight:bold;
+ font-size:20px;
 }
 
-button{
-  background:#ec407a;
-  color:white;
-  border:none;
-  padding:8px;
-  width:100%;
-  border-radius:20px;
-  cursor:pointer;
+/* 🎟️ RIFA */
+#rifaFinal{
+ background:#fff;
+ margin:20px;
+ padding:20px;
+ border-radius:14px;
+ text-align:center;
+ box-shadow:0 3px 10px rgba(0,0,0,0.08);
 }
 
-.categoria{
-  width:100%;
-  text-align:left;
-  margin:30px 0 10px 40px;
-  font-size:22px;
-  color:#8e24aa;
-  font-weight:600;
+#rifaFinal img{
+ width:100%;
+ max-width:500px;
+ border-radius:12px;
 }
 
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25d366;
-  color:white;
-  font-size:28px;
-  padding:15px;
-  border-radius:50%;
-  text-decoration:none;
-  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+/* 📍 FOOTER */
+footer{
+ background:#6c3eb8;
+ color:white;
+ text-align:center;
+ padding:18px;
+ margin-top:20px;
+ font-size:18px;
+}
+
+/* 🟢 BOTON WHATSAPP */
+#whatsapp{
+ position:fixed;
+ bottom:20px;
+ right:20px;
+ background:#25D366;
+ color:white;
+ padding:15px 18px;
+ border-radius:50%;
+ font-size:24px;
+ text-decoration:none;
+ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -106,59 +140,92 @@ button{
 <body>
 
 <header>
-<h1>Emma Market</h1>
-<p>Pedidos por WhatsApp - 095563602</p>
+Emma Market 💜
+<div id="abierto">ABIERTO</div>
 </header>
 
-<section class="hero">
-<img src="emma almacen.webp">
-</section>
-
-<section class="section local">
-<h2>Nuestro Local</h2>
-<img src="almacen por dentro.jpg">
-</section>
-
-<section class="section rifa">
-<h2>🎟 Súper Rifa</h2>
-<img src="rifa.jpg">
-<p><strong>Costo del boleto: $100</strong></p>
-<p>Midinero: 3701668133<br>
-Titular: Jurema Noemi Paisal</p>
-</section>
-
-<section class="section">
-<h2>Catálogo</h2>
-<div class="productos">
-
-<div class="categoria">Aceites</div>
-
-<div class="card"><h4>Aceite Condesa</h4><div class="precio">$80</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Aceite%20Condesa')">Comprar</button></div>
-<div class="card"><h4>Aceite Uruguay Girasol</h4><div class="precio">$110</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Aceite%20Uruguay')">Comprar</button></div>
-<div class="card"><h4>Aceite Cañuelas</h4><div class="precio">$120</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Aceite%20Cañuelas')">Comprar</button></div>
-
-<div class="categoria">Almacén</div>
-
-<div class="card"><h4>Azúcar</h4><div class="precio">$75</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Azucar')">Comprar</button></div>
-<div class="card"><h4>Arroz Saman</h4><div class="precio">$75</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Arroz%20Saman')">Comprar</button></div>
-<div class="card"><h4>Arroz Blue Patna</h4><div class="precio">$80</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Arroz%20Blue')">Comprar</button></div>
-<div class="card"><h4>Arroz Chef</h4><div class="precio">$80</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Arroz%20Chef')">Comprar</button></div>
-<div class="card"><h4>Harina</h4><div class="precio">$60</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Harina')">Comprar</button></div>
-<div class="card"><h4>Fideos</h4><div class="precio">$65</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Fideos')">Comprar</button></div>
-<div class="card"><h4>Porotos</h4><div class="precio">$65</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Porotos')">Comprar</button></div>
-<div class="card"><h4>Sal</h4><div class="precio">$65</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Sal')">Comprar</button></div>
-
-<div class="categoria">Bebidas</div>
-
-<div class="card"><h4>Coca-Cola 2L</h4><div class="precio">$180</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Coca%202L')">Comprar</button></div>
-<div class="card"><h4>Coca-Cola 600ml</h4><div class="precio">$70</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Coca%20600ml')">Comprar</button></div>
-<div class="card"><h4>Monster</h4><div class="precio">$120</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Monster')">Comprar</button></div>
-<div class="card"><h4>Vino Faisan</h4><div class="precio">$130</div><button onclick="window.open('https://wa.me/59895563602?text=Quiero%20Vino%20Faisan')">Comprar</button></div>
-
+<!-- 🏪 SLIDER -->
+<div id="slider">
+<div class="slide activo"><img src="img/frente.jpg"></div>
+<div class="slide"><img src="img/interior.jpg"></div>
 </div>
-</section>
 
-<a href="https://wa.me/59895563602" class="whatsapp">💬</a>
+<!-- 💜 DESCRIPCION PROFESIONAL -->
+<div id="descripcion">
+<p>
+Emma Market nació de una historia real, de esas que se construyen día a día. Soy mamá, emprendedora y vecina del barrio, y decidí crear este almacén pensando en algo simple pero importante: que tengas productos de todos los días, buenos precios y una atención cercana, de confianza.
+<br><br>
+En Emma Market encontrás alimentos básicos, bebidas, productos de limpieza, artículos para mascotas y todo lo que necesitás para tu casa, sin tener que irte lejos ni gastar de más.
+<br><br>
+Acá no sos un número. Conozco a mis clientes, escucho lo que necesitan y voy sumando productos según el barrio lo pide.
+<br><br>
+Emma Market es un almacén hecho con esfuerzo, dedicación y mucho corazón. Te espero 💜
+</p>
+</div>
 
+<!-- 🛒 CATALOGO -->
+<div id="catalogo"></div>
+
+<!-- 🎟️ RIFA -->
+<div id="rifaFinal">
+<h2>🎟️ Super Rifa Emma Market</h2>
+<img src="img/rifa.jpg">
+<p class="precio">$100 el número</p>
+</div>
+
+<!-- 📍 DIRECCION -->
+<footer>
+📍 Larravide 3230 — Emma Market 💜
+</footer>
+
+<!-- 🟢 BOTON WHATSAPP -->
+<a id="whatsapp" href="https://wa.me/59895563602" target="_blank">💬</a>
+
+<script>
+  
+/* PRODUCTOS */
+const productos=[
+{nombre:"Aceite Condesa",precio:80,imagen:"img/aceite.jpg"},
+{nombre:"Azúcar",precio:75,imagen:"img/azucar.jpg"},
+{nombre:"Arroz Saman",precio:75,imagen:"img/arroz.jpg"}
+];
+
+const catalogo=document.getElementById("catalogo");
+
+function render(){
+ catalogo.innerHTML="";
+ productos.forEach(p=>{
+  const card=document.createElement("div");
+  card.className="card";
+  card.innerHTML=`
+  <img src="${p.imagen}" onerror="this.src='img/frente.jpg'">
+  <h3>${p.nombre}</h3>
+  <p class="precio">$${p.precio}</p>
+  `;
+  catalogo.appendChild(card);
+ });
+}
+
+render();
+
+/* 🏪 SLIDER AUTOMATICO */
+let slides=document.querySelectorAll(".slide");
+let index=0;
+
+setInterval(()=>{
+ slides[index].classList.remove("activo");
+ index=(index+1)%slides.length;
+ slides[index].classList.add("activo");
+},3000);
+
+if("serviceWorker" in navigator){
+ navigator.serviceWorker.register("sw.js");
+}
+    
+</script>
+
+if("serviceWorker" in navigator){
+ navigator.serviceWorker.register("sw.js");
+  
 </body>
 </html>
