@@ -135,10 +135,10 @@ Emma Market 💜
 <div id="abierto">ABIERTO</div>
 </header>
 
-<!-- SLIDER con TUS fotos reales -->
+<!-- SLIDER -->
 <div id="slider">
-<div class="slide activo"><img src="emma almacen.webp"></div>
-<div class="slide"><img src="almacen por dentro.jpg"></div>
+<div class="slide activo"><img src="emma%20almacen.webp"></div>
+<div class="slide"><img src="almacen%20por%20dentro.jpg"></div>
 </div>
 
 <div id="descripcion">
@@ -164,9 +164,9 @@ Emma Market nació de una historia real. Productos diarios, buenos precios y ate
 <script>
 
 const productos=[
-{nombre:"Aceite Condesa",precio:80,imagen:"emma almacen.webp"},
-{nombre:"Azúcar",precio:75,imagen:"almacen por dentro.jpg"},
-{nombre:"Arroz Saman",precio:75,imagen:"emma almacen.webp"}
+{nombre:"Aceite Condesa",precio:80,imagen:"emma%20almacen.webp"},
+{nombre:"Azúcar",precio:75,imagen:"almacen%20por%20dentro.jpg"},
+{nombre:"Arroz Saman",precio:75,imagen:"emma%20almacen.webp"}
 ];
 
 const catalogo=document.getElementById("catalogo");
@@ -191,4 +191,12 @@ let slides=document.querySelectorAll(".slide");
 let index=0;
 
 setInterval(()=>{
- slides[index].
+ slides[index].classList.remove("activo");
+ index=(index+1)%slides.length;
+ slides[index].classList.add("activo");
+},3000);
+
+</script>
+
+</body>
+</html>
