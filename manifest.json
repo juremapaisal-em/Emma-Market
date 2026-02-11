@@ -1,0 +1,8 @@
+{
+  "name": "Emma Market",
+  "short_name": "Emma Market",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#6c3eb8",
+  "theme_color": "#6c3eb8"
+}
